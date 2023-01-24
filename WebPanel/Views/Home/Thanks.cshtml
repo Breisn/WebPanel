@@ -1,0 +1,33 @@
+﻿@model GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Danke</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body class="text-center">
+    <div>
+        <h1>Danke dir, @Model.Name!<img src="~/imagefiles/schütteln.jpg" style="width:5%; height:5%" /></h1>
+        @if (Model.WillAttend == true)
+        {
+            @:Es ist schön das du Erscheinst. Die Getränke sind schon im Kühlschrank!
+        }
+        else
+        {
+            @:Schade das du nicht Erscheinen kannst, aber danke für's bescheid sagen.
+        }
+    </div>
+    <div>
+        Klicke <a asp-action="ListResponses">hier <img src="~/imagefiles/check.jpg" style="width:2%;height:1%" /> </a>Um zu sehen wer Erscheint.
+    </div>
+    <br />
+    <div class="text-center">
+        <a class="btn btn-primary" asp-action="Index">Zurück</a>
+    </div>
+</body>
+</html>

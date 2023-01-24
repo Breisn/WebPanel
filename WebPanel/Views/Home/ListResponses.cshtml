@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GuestResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="widt=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    
+    <div class="text-center p-2">
+        <h2><img src="~/imagefiles/party.jpg" style="width:5%;height:5%" />Hier ist die Liste der Gäste die zur Grillparty Erscheinen<img src="~/imagefiles/party.jpg" style="width:5%;height:5%"/></h2>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Handy</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (GuestResponse r in Model)
+                {
+                    <tr>
+                        <td>@r.Name</td>
+                        <td>@r.Email</td>
+                        <td>@r.Handy</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <img src="~/imagefiles/pngwing.com.png" style="width:100%;height:100%;background-color:transparent"/>
+    <div class="text-center">
+       <a class="btn btn-primary" asp-action="Index">Zurück zum WebPanel</a>
+    </div>
+</body>
+</html>

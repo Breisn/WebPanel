@@ -1,0 +1,42 @@
+﻿@model Rechner
+
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+
+    <img src="~/imagefiles/spieß.png" style="display: inline;position:absolute;z-index:-1;transform:rotate(45deg);width:70px;float:left;margin-left:6%" />
+    <img src="~/imagefiles/spieß.png" style="display: inline;position:absolute;z-index:-1;transform:rotate(-33deg);width:70px;float:left;margin-left:6%" />
+    <img src="~/imagefiles/spieß.png" style="position:absolute;z-index: -1;transform:rotate(45deg);width:70px;float:right;margin-left:60%" />
+    <img src="~/imagefiles/spieß.png" style="position:absolute;z-index: -1;transform:rotate(-33deg);width:70px;float:right;margin-left:60%" />
+
+
+    <div class="text-center">
+
+        <h1 style="display:inline; margin-left: 5px;" class="display-4">Willkommen Im Währungsrechner</h1>
+        <hr />
+        <img src="~/imagefiles/zsk.jpg" style="width:300px; height: 400px;" alt="Eddies Cocktail Image">
+    </div>
+    <br />
+
+
+    <form asp-action="ergebnis" method="post">
+
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Betrag">Gebe die Summe ein, die in ZSK Umgerechnet werden soll:</label>
+            <input asp-for="Betrag" class="form-control" />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Umrechnen</button>
+    </form>
+    <br />
+    <form asp-action="Index" method="get">
+        <button type="submit" class="btn btn-primary">Zurück</button>
+
+   </form>
+
+</body>
+
+

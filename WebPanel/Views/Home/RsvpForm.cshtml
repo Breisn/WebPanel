@@ -1,0 +1,66 @@
+﻿@model GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="widt= device width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2"> <img src="~/imagefiles/ausfüllen.png" style="width:5%;height:auto%;" />RSVP</h5>
+    <form asp-action="RsvpForm" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Name">Dein Name:</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Deine E-mail</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class"form-group">
+            <label asp-for="Handy">Deine Handynummer</label>
+            <input asp-for="Handy" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Wirst du Erscheinen?</label>
+            <select asp-for="WillAttend" class="form-control">
+                <option value="">Wähle aus</option>
+                <option value="true">Ja, Ich Erscheine.</option>
+                <option value="false">Nein, Ich Erscheine nicht.</option>
+            </select>
+        </div>
+
+        <br />
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Verschicke RSVP</button>
+            <img src="~/imagefiles/check.jpg" style="width:5%; height: 5%;" alt="check" />
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <a class="btn btn-primary" asp-action="Index">Zurück</a>
+
+
+
+
+
+    </form>
+</body>
+
+
+
+
+
+
+</html>
