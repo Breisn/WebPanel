@@ -7,11 +7,13 @@
 <html>
 
 <head>
-    <meta name="viewport" content="widt= device width" />
+    <meta name="viewport" content="width=device-width" />
     <title>RsvpForm</title>
     <link rel="stylesheet" href="/css/StyleSheet.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/CheckSymbol.css" />
 </head>
+
 <body>
     <h5 class="bg-primary text-white text-center m-2 p-2"> <img src="~/imagefiles/ausfüllen.png" style="width:5%;height:auto%;" />RSVP</h5>
     <form asp-action="RsvpForm" method="post" class="m-2">
@@ -19,14 +21,17 @@
         <div class="form-group">
             <label asp-for="Name">Dein Name:</label>
             <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Email">Deine E-mail</label>
             <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
-        <div class"form-group">
+        <div class="form-group">
             <label asp-for="Handy">Deine Handynummer</label>
             <input asp-for="Handy" class="form-control" />
+            <span asp-validation-for="Handy" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label>Wirst du Erscheinen?</label>
@@ -40,8 +45,8 @@
         <br />
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Verschicke RSVP</button>
-            <img src="~/imagefiles/check.jpg" style="width:5%; height: 5%;" alt="check" />
         </div>
+        <div class="check-symbol"></div>
         <br />
         <br />
         <br />
@@ -51,16 +56,7 @@
 
         <a class="btn btn-primary" asp-action="Index">Zurück</a>
 
-
-
-
-
     </form>
 </body>
-
-
-
-
-
 
 </html>

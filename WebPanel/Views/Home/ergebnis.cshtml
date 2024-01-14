@@ -9,11 +9,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css " />
+    <link rel=" stylesheet" href="~/css/tabelle.css"/>
     <title>Umrechner</title>
 </head>
 <body>
     <div class"text-center p2">
-        <table class="table table-bordered table-striped table-sm">
+        <table class ="table-styled">
             <thead>
                 <tr><th>Kühe</th><th>Schafe</th><th>Ziegen</th><th>Kleine Ziegen</th><th>Restbetrag</th><th>Gesamt Summe</th></tr>
             </thead>
@@ -28,27 +29,18 @@
                         <td>@item.intspeicher[4]</td>
                         <td>@item.Betrag</td>
                     </tr>
-
                 }
             </tbody>
         </table>
-
+        </br>
         <form asp-action="ZSK_Umrechner" method="get">
             <button type="submit" class="btn btn-primary">Zurück zum Rechner</button>
         </form>
         <br />
+    </div>
+    <duv
         <form asp-action="Index" method="get">
             <button type="submit" class="btn btn-primary">Zurück zum WebPanel</button>
         </form>
-    </div>
-
-    <div class="text-center">
-        <h4>Geheimtipp für ein Kuhtastisches Erlebnis:</h4>
-        <img src="~/imagefiles/kuhess.jpg" style="width:100%; height: 100%;" alt="Kuh">
-    </div>
-    <br />
-    <br />
-    <br />
-
 </body>
 </html>

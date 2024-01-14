@@ -11,9 +11,10 @@ namespace WebPanel.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Gib bitte deine Handynummer an")]
+        [RegularExpression(@"^\d{10,}$", ErrorMessage = "Die Handynummer muss mindestens aus 10 Ziffern bestehen.")]
         public string Handy { get; set; }
 
-        [Required(ErrorMessage = "Gib bitte an ob du Erscheinen wirst")]
+        [Required(ErrorMessage = "Gib bitte an, ob du Erscheinen wirst")]
         public bool? WillAttend { get; set; }
     }
 }

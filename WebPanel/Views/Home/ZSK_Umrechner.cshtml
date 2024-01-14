@@ -3,25 +3,23 @@
 <head>
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/tabelle.css" />
 </head>
 <body>
 
     <img src="~/imagefiles/spieß.png" style="display: inline;position:absolute;z-index:-1;transform:rotate(45deg);width:70px;float:left;margin-left:6%" />
     <img src="~/imagefiles/spieß.png" style="display: inline;position:absolute;z-index:-1;transform:rotate(-33deg);width:70px;float:left;margin-left:6%" />
-    <img src="~/imagefiles/spieß.png" style="position:absolute;z-index: -1;transform:rotate(45deg);width:70px;float:right;margin-left:60%" />
-    <img src="~/imagefiles/spieß.png" style="position:absolute;z-index: -1;transform:rotate(-33deg);width:70px;float:right;margin-left:60%" />
-
+    <img src="~/imagefiles/spieß.png" style="position:absolute;z-index: -1;transform:rotate(45deg);width:70px;float:right;margin-left:42%" />
+    <img src="~/imagefiles/spieß.png" style="position:absolute;z-index: -1;transform:rotate(-33deg);width:70px;float:right;margin-left:42%" />
 
     <div class="text-center">
-
         <h1 style="display:inline; margin-left: 5px;" class="display-4">Willkommen Im Währungsrechner</h1>
         <hr />
         <img src="~/imagefiles/zsk.jpg" style="width:300px; height: 400px;" alt="Eddies Cocktail Image">
     </div>
     <br />
 
-
-    <form asp-action="ergebnis" method="post">
+    <form asp-action="ergebnis" method="post" onsubmit="return prüfeInhalt()">
 
         <div asp-validation-summary="All"></div>
         <div>
@@ -31,12 +29,46 @@
         <br />
         <button type="submit" class="btn btn-primary">Umrechnen</button>
     </form>
+
     <br />
+
     <form asp-action="Index" method="get">
         <button type="submit" class="btn btn-primary">Zurück</button>
+    </form>
 
-   </form>
+    <br />
+
+    <table class="table-styled">
+        <thead>
+            <tr>
+                <th>1 Kuh</th>
+                <th>1 Schaf</th>
+                <th>1 Ziege</th>
+                <th>1 Kleine Ziege</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2800</td>
+                <td>650</td>
+                <td>500</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function prüfeInhalt() {
+            var betragInput = document.querySelector('form input[name="Betrag"]');
+            var betragWert = betragInput.value.trim();
+
+            if (betragWert === "") {
+                alert("Bitte gebe einen Betrag ein, bevor du umrechnest!");
+                return false; // Verhindert das Absenden des Formulars
+            }
+
+            return true; // Sendet das Formular, wenn Inhalt vorhanden ist
+        }
+    </script>
 
 </body>
-
-

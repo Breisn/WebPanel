@@ -1,0 +1,20 @@
+﻿.check-symbol {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+    .check-symbol::before {
+        content: '';
+        position: absolute;
+        top: -160%;
+        left: 6910%;
+        width: 20px;
+        height: 50px;
+        border-width: 0 2px 2px 0;
+        border-style: solid;
+        border-color: transparent;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-color: green;
+    }

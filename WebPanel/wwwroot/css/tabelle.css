@@ -1,0 +1,41 @@
+﻿
+/* Stil für die Tabelle */
+.table-styled {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    /* Stil für Kopfzeile */
+    .table-styled thead {
+        background-color: #f2f2f2;
+    }
+
+    /* Stil für Kopfzeilenzellen */
+    .table-styled th {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Stil für Körperzellen */
+    .table-styled td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Wechselnde Hintergrundfarbe für Zeilen im Körper der Tabelle */
+    .table-styled tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    /* Stil für Kopfzeilenzellen */
+    .table-styled th {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        color: white;
+        color: #fff;
+        background-color: #1b6ec2;
+        border-color: #1861ac;
+    }
